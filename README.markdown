@@ -1,14 +1,16 @@
 Paris
 =====
 
-[![Build Status](https://travis-ci.org/j4mie/paris.png?branch=master)](https://travis-ci.org/j4mie/paris)
+[![Build Status](https://travis-ci.org/j4mie/paris.png?branch=master)](https://travis-ci.org/j4mie/paris) [![Latest Stable Version](https://poser.pugx.org/j4mie/paris/v/stable.png)](https://packagist.org/packages/j4mie/paris) [![Total Downloads](https://poser.pugx.org/j4mie/paris/downloads.png)](https://packagist.org/packages/j4mie/paris)
 
 [http://j4mie.github.com/idiormandparis/](http://j4mie.github.com/idiormandparis/)
 
 ---
 ### Feature complete
 
-Paris is now considered to be feature complete as of version 1.4.0. Whilst it will continue to be maintained with bug fixes there will be no further new features added.
+Paris is now considered to be feature complete as of version 1.5.0. Whilst it will continue to be maintained with bug fixes there will be no further new features added from this point on.
+
+**Please do not submit feature requests or pull requests adding new features as they will be closed without ceremony.**
 
 ---
 
@@ -71,6 +73,54 @@ foreach ($tweets as $tweet) {
 
 Changelog
 ---------
+
+#### 1.5.6 - released 2017-03-21
+
+* Allow IDE's to autocomplete when `foreach` over `find_many()` result [[stratoss](https://github.com/stratoss)] - [issue #128](https://github.com/j4mie/paris/pull/128)
+* Document the @property PHPDoc comment for IDE autocomplete of model properties [[Treffynnon](https://github.com/Treffynnon)]
+
+#### 1.5.5 - released 2016-12-14
+
+* Fix join table name not generated correctly [[Ralphunter](https://github.com/Ralphunter)] - [issue #109](https://github.com/j4mie/paris/pull/109)
+* Add phpunit as dev dependency and composer script (`composer test`) to easily run tests [[Treffynnon](https://github.com/Treffynnon)]
+* Global setting to allow static requests to avoid being forced in to using the namespace + class as the auto table name [[michaelward82](https://github.com/michaelward82)] - [issue #100](https://github.com/j4mie/paris/issues/100)
+* Document conflict between static Model calling and auto_prefix_models [[michaelward82](https://github.com/michaelward82)] - [issue #102](https://github.com/j4mie/paris/issues/102)
+* Added @method tags for magic methods [[stellis](https://github.com/stellis)] - [issue #104](https://github.com/j4mie/paris/issues/104)
+* Add missing `__unset()` magic method [[qyanu](https://github.com/qyanu)] - [issue #106](https://github.com/j4mie/paris/issues/106)
+* Remove PHP 5.2 from travis-ci containers to test against (**note** Idiorm still supports PHP 5.2 despite this) [[Treffynnon](https://github.com/treffynnon)]
+
+#### 1.5.4 - released 2014-09-23
+
+* Corrects return value in docblock for 2 Model functions [[michaelward82](https://github.com/michaelward82)] - [issue #99](https://github.com/j4mie/paris/pull/99)
+
+#### 1.5.3 - released 2014-06-25
+
+* Remove erroneously committed git merge backup file
+
+#### 1.5.2 - released 2014-06-23
+
+* Paris incorrectly relying on old Idiorm version in the composer.json [[ilsenem](https://github.com/ilsenem)] - [issue #96](https://github.com/j4mie/paris/pull/96)
+
+#### 1.5.1 - released 2014-06-22
+
+* Remove HHVM build target from travis-ci as there is a bug in HHVM
+
+#### 1.5.0 - released 2014-06-22
+
+* Allows static calling of Model subclasses, ignoring namespace info during table name generation [[michaelward82](https://github.com/michaelward82)] - [issue #90](https://github.com/j4mie/paris/issues/90)
+* Prevent invalid method calls from triggering infinite recursion [[michaelward82](https://github.com/michaelward82)] - [issue #75](https://github.com/j4mie/idiorm/issues/75)
+* Allow chaining of the `set()` and `set_expr()` methods [[naga3](https://github.com/naga3)] - [issue #94](https://github.com/j4mie/paris/issues/94)
+* Add HHVM to travis-ci build matrix [[ptarjan](https://github.com/ptarjan)] - [issue #81](https://github.com/j4mie/idiorm/issues/81)
+* Improve join documentation [[rhynodesigns](https://github.com/rhynodesigns)] - [issue #92](https://github.com/j4mie/paris/issues/92)
+* Improve code docblock [[michaelward82](https://github.com/michaelward82)] - [issue #91](https://github.com/j4mie/paris/issues/91)
+* Improve code docblocks and whitespace [[michaelward82](https://github.com/michaelward82)] - [issue #93](https://github.com/j4mie/paris/issues/93)
+* Improve connections documentation [[kkeiper1103](https://github.com/kkeiper1103)] - [issue #79](https://github.com/j4mie/paris/issues/79)
+
+#### 1.4.2 - released 2013-12-12
+
+**Patch update to remove a broken pull request** - may have consequences for users of 1.4.0 and 1.4.1 that exploited the "`find_many()` now returns an associative array with the databases primary ID as the array keys" change that was merged in 1.4.0.
+
+* Back out pull request/issue [#133](https://github.com/j4mie/idiorm/pull/133) as it breaks backwards compatibility in previously unexpected ways (see Idiorm issues [#162](https://github.com/j4mie/idiorm/pull/162), [#156](https://github.com/j4mie/idiorm/issues/156) and [#133](https://github.com/j4mie/idiorm/pull/133#issuecomment-29063108)) - sorry for merging this change into Paris - closes Idiorm [issue 156](https://github.com/j4mie/idiorm/issues/156)
 
 #### 1.4.1 - released 2013-09-05
 
